@@ -28,7 +28,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>cb.bucket.items[{$USERNAME},{$PASSWORD},{$BUCKET}]</key>
+                    <key>cb.bucket.items[{$USERNAME},{$PASSWORD},default]</key>
                     <delay>60</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -70,7 +70,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>cb.bucket.name[{$USERNAME},{$PASSWORD},{$BUCKET}]</key>
+                    <key>cb.bucket.name[{$USERNAME},{$PASSWORD},default]</key>
                     <delay>86400</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -112,7 +112,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>cb.bucket.ops[{$USERNAME},{$PASSWORD},{$BUCKET}]</key>
+                    <key>cb.bucket.ops[{$USERNAME},{$PASSWORD},default]</key>
                     <delay>60</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -154,7 +154,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>cb.bucket.size[{$USERNAME},{$PASSWORD},{$BUCKET}]</key>
+                    <key>cb.bucket.size[{$USERNAME},{$PASSWORD},default]</key>
                     <delay>60</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -196,7 +196,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>cb.bucket.type[{$USERNAME},{$PASSWORD},{$BUCKET}]</key>
+                    <key>cb.bucket.type[{$USERNAME},{$PASSWORD},default]</key>
                     <delay>86400</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -238,7 +238,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>cb.bucket.quotapercent[{$USERNAME},{$PASSWORD},{$BUCKET}]</key>
+                    <key>cb.bucket.quotapercent[{$USERNAME},{$PASSWORD},default]</key>
                     <delay>60</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -1172,7 +1172,7 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>100-{Template App Couchbasea:cb.bucket.quotapercent[{$USERNAME},{$PASSWORD},{$BUCKET}].last()}&lt;10</expression>
+            <expression>100-{Template App Couchbasea:cb.bucket.quotapercent[{$USERNAME},{$PASSWORD},default].last()}&lt;10</expression>
             <name>Lack of free bucket quota on server {HOST.NAME}</name>
             <url/>
             <status>0</status>
@@ -1182,7 +1182,7 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>100-{Template App Couchbasea:cb.bucket.quotapercent[{$USERNAME},{$PASSWORD},{$BUCKET}].last()}&lt;70</expression>
+            <expression>100-{Template App Couchbasea:cb.bucket.quotapercent[{$USERNAME},{$PASSWORD},default].last()}&lt;70</expression>
             <name>Lack of free bucket quota warning on server {HOST.NAME}</name>
             <url/>
             <status>0</status>
@@ -1220,7 +1220,7 @@
                     <type>0</type>
                     <item>
                         <host>Template App Couchbasea</host>
-                        <key>cb.bucket.items[{$USERNAME},{$PASSWORD},{$BUCKET}]</key>
+                        <key>cb.bucket.items[{$USERNAME},{$PASSWORD},default]</key>
                     </item>
                 </graph_item>
             </graph_items>
@@ -1252,7 +1252,7 @@
                     <type>0</type>
                     <item>
                         <host>Template App Couchbasea</host>
-                        <key>cb.bucket.ops[{$USERNAME},{$PASSWORD},{$BUCKET}]</key>
+                        <key>cb.bucket.ops[{$USERNAME},{$PASSWORD},default]</key>
                     </item>
                 </graph_item>
             </graph_items>
@@ -1284,7 +1284,7 @@
                     <type>0</type>
                     <item>
                         <host>Template App Couchbasea</host>
-                        <key>cb.bucket.quotapercent[{$USERNAME},{$PASSWORD},{$BUCKET}]</key>
+                        <key>cb.bucket.quotapercent[{$USERNAME},{$PASSWORD},default]</key>
                     </item>
                 </graph_item>
             </graph_items>
